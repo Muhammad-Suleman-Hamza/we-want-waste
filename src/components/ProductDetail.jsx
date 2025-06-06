@@ -1,6 +1,7 @@
 import '../styles/herosec.css';
 import { useState } from "react";
 import Grid from '@mui/material/Grid';
+import { ToastContainer, toast } from 'react-toastify';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {
   Box,
@@ -65,6 +66,7 @@ const ProductDetail = ({ yardSkips }) => {
 
   return (
     <>
+      <ToastContainer />
       {SkipHireStepper()}
       <Box
         className="herosec-container"
@@ -207,6 +209,7 @@ const ProductDetail = ({ yardSkips }) => {
                   variant="contained"
                   className='add-button'
                   startIcon={<ShoppingCartIcon />}
+                  onClick={() => toast.success("Added into cart!")}
                 >
                   Add This Skip
                 </Button>

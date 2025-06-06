@@ -1,3 +1,4 @@
+import { SyncLoader } from "react-spinners";
 import { yardImages } from '../utlis/constants';
 import React, { useEffect, useState } from 'react';
 import { getSkipsByLocation } from '../api/yardSkips'
@@ -31,13 +32,28 @@ const HomePage = () => {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
       {loading ? (
-        <p style={{ textAlign: 'center', padding: '2rem' }}>Loading...</p>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <SyncLoader
+            color={'#286da6'}
+            loading={true}
+            data-testid="loader"
+            aria-label="Loading Spinner"
+          />
+        </div>
       ) : yardSkips.length > 0 ? (
         <ProductDetail yardSkips={yardSkips} />
       ) : (
         <p style={{ textAlign: 'center', padding: '2rem' }}>No skips found.</p>
       )}
     </div>
+
   );
 };
 
