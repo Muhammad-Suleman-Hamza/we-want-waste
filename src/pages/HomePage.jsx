@@ -1,4 +1,4 @@
-import '../styles/HomePage.css';
+import '../styles/homepage.css';
 import { SyncLoader } from "react-spinners";
 import { yardImages } from '../utlis/constants';
 import React, { useEffect, useState } from 'react';
