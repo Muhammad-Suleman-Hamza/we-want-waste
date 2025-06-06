@@ -1,0 +1,19 @@
+/* homepage.css */
+
+.homepage-container {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+  }
+  
+  .loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .no-skips-message {
+    text-align: center;
+    padding: 2rem;
+  }
+  

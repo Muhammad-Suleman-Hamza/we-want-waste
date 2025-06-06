@@ -1,3 +1,4 @@
+import '../styles/HomePage.css';
 import { SyncLoader } from "react-spinners";
 import { yardImages } from '../utlis/constants';
 import React, { useEffect, useState } from 'react';
@@ -30,16 +31,9 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
+    <div className="homepage-container">
       {loading ? (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-          }}
-        >
+        <div className="loader-wrapper">
           <SyncLoader
             color={'#286da6'}
             loading={true}
@@ -50,10 +44,9 @@ const HomePage = () => {
       ) : yardSkips.length > 0 ? (
         <ProductDetail yardSkips={yardSkips} />
       ) : (
-        <p style={{ textAlign: 'center', padding: '2rem' }}>No skips found.</p>
+        <p className="no-skips-message">No skips found.</p>
       )}
     </div>
-
   );
 };
 

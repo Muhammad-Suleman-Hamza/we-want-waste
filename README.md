@@ -24,6 +24,10 @@ This project presents a redesigned version of the **Yard Skip Selection** page f
   - **Total Price**
   - **On-road availability**
   - **Heavy waste allowance**
+- 📦 **Add to Cart with Toastify**: Clicking the "Add to Cart" button triggers a toast notification.
+- 🔄 **Loading Spinner**: A full-page loader appears centered while data is being fetched from the API.
+
+---
 
 ## 🧠 Key Features
 
@@ -34,6 +38,10 @@ This project presents a redesigned version of the **Yard Skip Selection** page f
 | 🕐 **Hire Period Display**        | Clearly indicates how long the selected skip can be hired. |
 | 🧾 **Dynamic Skip Size Selector** | Users can choose a size from a dropdown; all details update accordingly. |
 | ✅ **Availability Indicators**    | Shows whether the selected skip is allowed on-road and if heavy waste is permitted. |
+| 🔔 **Toast Notifications**        | Uses `react-toastify` to confirm when an item is added to the cart. |
+| 🔃 **Centered Loader**            | Uses `SyncLoader` and flexbox to show a spinner centered on screen during loading state. |
+
+---
 
 ## 📐 Design Goals & Improvements
 
@@ -42,33 +50,51 @@ This project presents a redesigned version of the **Yard Skip Selection** page f
 - ✅ **Improved UX**: Easier decision-making by consolidating skip details into a single view.
 - ✅ **Modern Aesthetic**: Aligns more with ecommerce-style product pages (e.g., Amazon, Junaid Jamshed) for familiarity.
 
+---
+
 ## 🛠️ Tech Stack
 
 - **React** – Frontend library
-- **MUI (Material UI)** – UI components
-- **Axios** – HTTP client for API calls
 - **Vite** – Lightning-fast build tool and dev server
+- **MUI (Material UI)** – UI components and layout
+- **Axios** – HTTP client for API calls
+- **React Toastify** – Toast notifications
+- **React Spinners (SyncLoader)** – Fullscreen loading spinner
+
+---
 
 ## 📸 Screenshots
 
-## Before 
+### Before
 ![Before](./src/assets/before.png)
 
-## After 
+### After
 ![After](./src/assets/after.png)
 
 ---
 
-### 🛠 Installation
+## 📁 Folder Structure
 
-1. **Clone the repository**:
-
-```bash
-git clone https://github.com/your-username/we-want-waste.git
-cd we-want-waste
-npm install
-# or
-yarn
-npm run dev
-# or
-yarn dev
+```plaintext
+wewantwaste-redesign/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   │   └── yard-images/         # All skip yard images
+│   ├── components/
+│   │   ├── Herosec.jsx          # Main hero/selector component
+│   │   └── SkipCard.jsx         # (Optional) legacy or reusable card component
+│   ├── constants/
+│   │   └── index.js             # Contains static data like yardImages array
+│   ├── pages/
+│   │   └── HomePage.jsx         # Main landing page with logic
+│   ├── services/
+│   │   └── api.js               # Axios API calls for yard skip data
+│   ├── App.jsx                  # Main App component
+│   ├── main.jsx                 # Entry point for React
+│   └── index.css                # Global styles
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
