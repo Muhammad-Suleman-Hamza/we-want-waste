@@ -1,7 +1,7 @@
-import Herosec from '../components/Herosec';
 import { yardImages } from '../utlis/constants';
 import React, { useEffect, useState } from 'react';
 import { getSkipsByLocation } from '../api/yardSkips'
+import ProductDetail from '../components/ProductDetail';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -33,7 +33,7 @@ const HomePage = () => {
       {loading ? (
         <p style={{ textAlign: 'center', padding: '2rem' }}>Loading...</p>
       ) : yardSkips.length > 0 ? (
-        <Herosec yardSkips={yardSkips} />
+        <ProductDetail yardSkips={yardSkips} />
       ) : (
         <p style={{ textAlign: 'center', padding: '2rem' }}>No skips found.</p>
       )}

@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import { steps } from '../utlis/constants';
 
-const Herosec = ({ yardSkips }) => {
+const ProductDetail = ({ yardSkips }) => {
   const [loaded, setLoaded] = useState(false);
   const [selectedYard, setSelectedYard] = useState(yardSkips[0]);
 
@@ -234,4 +234,4 @@ const Herosec = ({ yardSkips }) => {
   );
 };
 
-export default Herosec;
+export default ProductDetail;
